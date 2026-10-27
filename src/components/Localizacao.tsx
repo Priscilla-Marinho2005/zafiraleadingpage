@@ -22,12 +22,12 @@ const mapa =
 
 export default function Localizacao() {
     return (
-        <section id="localizacao" className="bg-white py-24 text-primary">
-            <div className="mx-auto grid max-w-7xl items-center gap-16 px-10 md:grid-cols-2">
+        <section id="localizacao" className="bg-white py-16 text-primary sm:py-24">
+            <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-10 md:grid-cols-2 md:gap-16">
                 <div>
                     <p className="text-sm font-medium tracking-[0.28em] text-secondary">LOCALIZAÇÃO</p>
-                    <h2 className="mt-4 text-3xl leading-tight font-medium">
-                        Mais perto do que faz parte da <span className="font-allison text-7xl text-tertiary pl-2"> sua vida</span>
+                    <h2 className="mt-4 text-3xl leading-tight font-medium md:text-4xl">
+                        Mais perto do que faz parte da <span className="pl-2 font-allison text-5xl text-tertiary sm:text-7xl"> sua vida</span>
                     </h2>
                     <p className="mt-6 text-base leading-relaxed text-primary/80">
                         Viver no Zafira é estar em uma região que combina a dinâmica da Zona Norte com a
@@ -37,7 +37,7 @@ export default function Localizacao() {
                     </p>
 
                     <p className="mt-10 text-sm font-medium tracking-[0.2em] text-secondary">PRÓXIMO DE</p>
-                    <ul className="grid grid-cols-2 gap-5 mt-5 space-y-5">
+                    <ul className="mt-5 grid grid-cols-2 gap-5">
                         {proximos.map((item) => (
                             <li key={item.titulo}>
                                 <p className="font-medium">{item.titulo}</p>

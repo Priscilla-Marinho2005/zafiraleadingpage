@@ -30,8 +30,8 @@ const terminacoes = [
 
 export default function Plantas() {
     return (
-        <section id="plantas" className="bg-white py-24 text-primary">
-            <div className="mx-auto max-w-7xl px-10">
+        <section id="plantas" className="bg-white py-16 text-primary sm:py-24">
+            <div className="mx-auto max-w-7xl px-5 sm:px-10">
                 <p className="text-sm font-medium tracking-[0.28em] text-secondary">PLANTAS</p>
                 <h2 className="mt-4 text-3xl leading-tight font-medium md:text-4xl">2 quartos · 1 suíte</h2>
                 <p className="mt-4 max-w-xl text-base leading-relaxed text-primary/80">
@@ -44,7 +44,7 @@ export default function Plantas() {
                         alt="Planta geral dos apartamentos"
                         className="w-full object-contain"
                     />
-                    <figcaption className="mt-3 text-right text-sm text-primary/70">
+                    <figcaption className="mt-3 text-right text-xs text-primary/70 sm:text-sm">
                         Planta geral apartamentos — imagem ilustrativa
                     </figcaption>
                 </figure>

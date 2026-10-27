@@ -11,15 +11,10 @@ export default function Hero() {
         >
             <div className="absolute inset-0 bg-primary/60" />
             <div className="absolute inset-0 bg-linear-to-l from-primary/55 via-primary/20 to-transparent" />
-            <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center gap-6 px-10 pt-20 md:flex-row md:items-end md:justify-between">
-                <img
-                    src={torre}
-                    alt="Empreendimento Zafira"
-                    className="h-[52vh] w-auto max-w-[46%] object-contain object-bottom md:h-[86vh]"
-                />
-                <div className="w-full max-w-xl pb-16 text-white md:translate-x-12 md:pb-28">
-                    <p className="font-allison text-8xl leading-none text-tertiary">Valorize</p>
-                    <h1 className="mt-2 text-4xl leading-tight md:text-5xl">
+            <div id="topo" className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-between gap-6 px-5 pt-24 sm:px-10 md:flex-row-reverse md:items-end">
+                <div className="w-full max-w-xl text-white md:translate-x-12 md:pb-28">
+                    <p className="font-allison text-6xl leading-none text-tertiary sm:text-8xl">Valorize</p>
+                    <h1 className="mt-2 text-3xl leading-tight sm:text-4xl md:text-5xl">
                         o que faz a vida
                         <br />
                         valer a pena
@@ -28,6 +23,11 @@ export default function Hero() {
                         2 quartos com suíte em Casa Amarela, Recife. Um novo empreendimento Romarco.
                     </p>
                 </div>
+                <img
+                    src={torre}
+                    alt="Empreendimento Zafira"
+                    className="h-[55vh] w-auto max-w-[78%] object-contain object-bottom md:h-[86vh] md:max-w-[46%]"
+                />
             </div>
         </section>
     );

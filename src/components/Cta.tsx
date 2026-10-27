@@ -18,8 +18,8 @@ export default function Cta() {
         >
             <div className="absolute inset-0 bg-primary/70" />
             <div className="absolute inset-0 bg-linear-to-l from-primary/55 via-primary/20 to-transparent" />
-            <div className="relative mx-auto flex min-h-[70vh] max-w-3xl flex-col items-center justify-center px-10 py-24 text-center text-white">
-                <img src="/zafira-logo.png" alt="Zafira" className="h-16 w-auto" />
+            <div className="relative mx-auto flex min-h-[70vh] max-w-3xl flex-col items-center justify-center px-5 py-16 text-center text-white sm:px-10 sm:py-24">
+                <img src="/zafira-logo.png" alt="Zafira" className="h-14 w-auto sm:h-16" />
                 <h2 className="mt-8 text-3xl font-medium md:text-4xl">Venha conhecer o Zafira.</h2>
                 <p className="mt-4 text-base text-gray">Fale com nossa equipe comercial :</p>
                 <ul className="mt-8 flex gap-5">
