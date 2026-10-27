@@ -1,1 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Allison&family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
+
+@theme {
+    --font-allison: 'Allison', cursive;
+    --font-outfit: 'Outfit', sans-serif;
+
+    --color-primary: #091C3E;
+    --color-secondary: #4BA1DA;
+    --color-tertiary: #89DBBE;
+    --color-gray: #B3C3D5;
+}
+
+body {
+    font-family: var(--font-outfit);
+}
