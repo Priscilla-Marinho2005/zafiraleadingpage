@@ -64,7 +64,7 @@ export default function Lazer() {
                     Mais do que <span className="font-allison text-5xl text-tertiary sm:text-7xl">áreas comuns</span>
                 </h2>
                 <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80">
-                    Espaços pensados para todos: crianças, jovens, adultos, terceira idade e pets.
+                    Espaços pensados para todos: crianças, jovens, adultos, terceira idade e pets. O Zafira reúne piscinas adulto e infantil com deck, coworking, salão de festas, sala fit dance, espaço fitness, sala de jogos, pet place, espaço teen, brinquedoteca e playground.
                 </p>
 
                 <div className="mx-auto mt-14 grid max-w-6xl gap-3 md:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">

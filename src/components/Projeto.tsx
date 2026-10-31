@@ -54,7 +54,7 @@ export default function Projeto() {
                 <div className="flex justify-center">
                     <img
                         src={pool}
-                        alt="Casal na piscina do empreendimento"
+                        alt="Área de piscina do Zafira, em Casa Amarela"
                         className="h-auto max-h-135 w-full max-w-105 object-cover shadow-xl [clip-path:polygon(50%_0%,100%_18%,100%_82%,50%_100%,0%_82%,0%_18%)]"
                     />
                 </div>

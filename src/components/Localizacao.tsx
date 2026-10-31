@@ -57,7 +57,7 @@ export default function Localizacao() {
                         referrerPolicy="strict-origin-when-cross-origin"
                     />
                     <p className="mt-4 text-sm text-primary/80">
-                        Rua Conselheiro Nabuco, nº 241, Casa Amarela, Recife/PE.
+                        Rua Conselheiro Nabuco, nº 241, Casa Amarela, Recife/PE, CEP 52070-010. Zona Norte, próximo ao Sítio da Trindade.
                     </p>
                 </div>
             </div>

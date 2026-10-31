@@ -13,11 +13,11 @@ export default function Hero() {
             <div className="absolute inset-0 bg-linear-to-l from-primary/55 via-primary/20 to-transparent" />
             <div id="topo" className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-between gap-6 px-5 sm:px-25 md:flex-row-reverse md:items-end">
                 <div className="flex w-full max-w-lg flex-col items-center justify-end self-stretch pt-40 text-center text-white sm:pt-48 md:pt-0 md:pb-38">
-                    <img src="/zafira-logo.png" alt="Zafira" className="h-20 w-auto" />
-                    <p className="mt-9 max-w-md text-xl font-medium leading-snug sm:text-2xl">
-                        2 quartos com suíte e varanda gourmet,{" "}
+                    <img src="/zafira-logo.png" alt="Zafira Edifício" className="h-20 w-auto" />
+                    <h1 className="mt-9 max-w-md text-xl font-medium leading-snug sm:text-2xl">
+                        Apartamentos de 2 quartos com suíte e varanda gourmet,{" "}
                         <span className="font-bold">em Casa Amarela, Recife.</span>
-                    </p>
+                    </h1>
                     <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">
                         Pensado para você viver o melhor da vida, todos os dias.
                     </p>
@@ -25,7 +25,7 @@ export default function Hero() {
                 </div>
                 <img
                     src={torre}
-                    alt="Empreendimento Zafira"
+                    alt="Fachada do edifício Zafira, empreendimento da Romarco em Casa Amarela, Recife, comercializado pela Edu Imobiliária"
                     className="h-[55vh] w-auto max-w-[78%] object-contain object-bottom md:h-[86vh] md:max-w-[46%]"
                     fetchPriority="high"
                     decoding="async"

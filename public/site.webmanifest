@@ -1,6 +1,7 @@
 {
-  "name": "Zafira",
+  "name": "Zafira | Edu Imobiliária",
   "short_name": "Zafira",
+  "description": "Apartamentos de 2 quartos do Zafira, em Casa Amarela, Recife. Comercialização Edu Imobiliária.",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
