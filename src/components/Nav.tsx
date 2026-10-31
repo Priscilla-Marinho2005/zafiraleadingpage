@@ -22,7 +22,7 @@ export default function Nav() {
             <div className="flex h-16 items-stretch">
                 <div className="flex flex-1 items-center justify-between px-5 sm:px-10">
                     <a href="#topo">
-                        <img src="/LOGO-EDU-IMOB-SEM-FUNDO.png" alt="logo Zafira" className="h-9 w-auto sm:h-30" />
+                        <img src="/LOGO-EDU-IMOB-SEM-FUNDO.png" alt="logo Zafira" className="h-20 w-auto sm:h-30" />
                     </a>
                     <ul className="hidden gap-8 text-sm whitespace-nowrap text-white [text-shadow:0_1px_3px_rgba(9,28,62,0.95)] lg:flex xl:gap-10">
                         {links.map((link) => (
