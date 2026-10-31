@@ -11,17 +11,17 @@ export default function Hero() {
         >
             <div className="absolute inset-0 bg-primary/60" />
             <div className="absolute inset-0 bg-linear-to-l from-primary/55 via-primary/20 to-transparent" />
-            <div id="topo" className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-between gap-6 px-5 pt-24 sm:px-10 md:flex-row-reverse md:items-end">
-                <div className="w-full max-w-xl text-white md:translate-x-12 md:pb-28">
-                    <p className="font-allison text-6xl leading-none text-tertiary sm:text-8xl">Valorize</p>
-                    <h1 className="mt-2 text-3xl leading-tight sm:text-4xl md:text-5xl">
-                        o que faz a vida
-                        <br />
-                        valer a pena
-                    </h1>
-                    <p className="mt-6 max-w-md text-base text-gray">
-                        2 quartos com suíte em Casa Amarela, Recife. Um novo empreendimento Romarco.
+            <div id="topo" className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-between gap-6 px-5 sm:px-25 md:flex-row-reverse md:items-end">
+                <div className="flex w-full max-w-lg flex-col items-center justify-end self-stretch text-center text-white md:pb-38">
+                    <img src="/zafira-logo.png" alt="Zafira" className="h-16 w-auto sm:h-20" />
+                    <p className="mt-9 max-w-md text-xl font-medium leading-snug sm:text-2xl">
+                        2 quartos com suíte e varanda gourmet,{" "}
+                        <span className="font-bold">em Casa Amarela, Recife.</span>
                     </p>
+                    <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">
+                        Pensado para você viver o melhor da vida, todos os dias.
+                    </p>
+
                 </div>
                 <img
                     src={torre}

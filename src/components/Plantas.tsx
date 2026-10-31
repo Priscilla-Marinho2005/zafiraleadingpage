@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const plantaGeral =
     "https://res.cloudinary.com/dkgjwrjpv/image/upload/v1793139673/Planta_geral_apartamentos_imagem_ilustrativa_mlj1i2.webp";
 
@@ -28,7 +30,39 @@ const terminacoes = [
     },
 ];
 
+type ImagemAmpliada = {
+    src: string;
+    alt: string;
+};
+
 export default function Plantas() {
+    const [ampliada, setAmpliada] = useState<ImagemAmpliada | null>(null);
+
+    function ampliarImagem(src: string, alt: string) {
+        setAmpliada({ src, alt });
+    }
+
+    function fecharAmpliacao() {
+        setAmpliada(null);
+    }
+
+    useEffect(() => {
+        if (!ampliada) return;
+
+        function aoTeclar(evento: KeyboardEvent) {
+            if (evento.key === "Escape") fecharAmpliacao();
+        }
+
+        document.addEventListener("keydown", aoTeclar);
+        const overflowAnterior = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+
+        return () => {
+            document.removeEventListener("keydown", aoTeclar);
+            document.body.style.overflow = overflowAnterior;
+        };
+    }, [ampliada]);
+
     return (
         <section id="plantas" className="bg-white py-16 text-primary sm:py-24">
             <div className="mx-auto max-w-7xl px-5 sm:px-10">
@@ -39,11 +73,18 @@ export default function Plantas() {
                 </p>
 
                 <figure className="mt-14">
-                    <img
-                        src={plantaGeral}
-                        alt="Planta geral dos apartamentos"
-                        className="w-full object-contain"
-                    />
+                    <button
+                        type="button"
+                        onClick={() => ampliarImagem(plantaGeral, "Planta geral dos apartamentos")}
+                        className="block w-full cursor-zoom-in"
+                        aria-label="Ampliar planta geral dos apartamentos"
+                    >
+                        <img
+                            src={plantaGeral}
+                            alt="Planta geral dos apartamentos"
+                            className="w-full object-contain"
+                        />
+                    </button>
                     <figcaption className="mt-3 text-right text-xs text-primary/70 sm:text-sm">
                         Planta geral apartamentos — imagem ilustrativa
                     </figcaption>
@@ -52,12 +93,44 @@ export default function Plantas() {
                 <ul className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
                     {terminacoes.map((planta) => (
                         <li key={planta.nome}>
-                            <img src={planta.src} alt={planta.nome} className="w-full object-contain" />
+                            <button
+                                type="button"
+                                onClick={() => ampliarImagem(planta.src, planta.nome)}
+                                className="block w-full cursor-zoom-in"
+                                aria-label={`Ampliar ${planta.nome}`}
+                            >
+                                <img src={planta.src} alt={planta.nome} className="w-full object-contain" />
+                            </button>
                             <p className="mt-3 text-center text-sm font-medium tracking-wide">{planta.nome}</p>
                         </li>
                     ))}
                 </ul>
             </div>
+
+            {ampliada && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 sm:p-8"
+                    onClick={fecharAmpliacao}
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label={ampliada.alt}
+                >
+                    <button
+                        type="button"
+                        onClick={fecharAmpliacao}
+                        className="absolute top-4 right-4 text-sm font-medium tracking-wide text-white"
+                        aria-label="Fechar imagem ampliada"
+                    >
+                        Fechar
+                    </button>
+                    <img
+                        src={ampliada.src}
+                        alt={ampliada.alt}
+                        className="max-h-[90vh] max-w-full object-contain"
+                        onClick={(evento) => evento.stopPropagation()}
+                    />
+                </div>
+            )}
         </section>
     );
 }

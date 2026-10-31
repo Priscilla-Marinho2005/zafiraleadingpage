@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaWhatsapp } from "react-icons/fa";
+
+const whatsappHref = "https://wa.me/558187360578";
 
 const links = [
     { nome: "O projeto", href: "#projeto" },
@@ -20,7 +22,7 @@ export default function Nav() {
             <div className="flex h-16 items-stretch">
                 <div className="flex flex-1 items-center justify-between px-5 sm:px-10">
                     <a href="#topo">
-                        <img src="/zafira-logo.png" alt="logo Zafira" className="h-9 w-auto sm:h-10" />
+                        <img src="/LOGO-EDU-IMOB-SEM-FUNDO.png" alt="logo Zafira" className="h-9 w-auto sm:h-30" />
                     </a>
                     <ul className="hidden gap-8 text-sm whitespace-nowrap text-white [text-shadow:0_1px_3px_rgba(9,28,62,0.95)] lg:flex xl:gap-10">
                         {links.map((link) => (
@@ -41,12 +43,15 @@ export default function Nav() {
                         {aberto ? <FaTimes /> : <FaBars />}
                     </button>
                 </div>
-                <div className="hidden w-56 items-center justify-center bg-secondary/80 backdrop-blur-xl [clip-path:polygon(3rem_0,100%_0,100%_100%,0_100%)] lg:flex xl:w-70 xl:[clip-path:polygon(4rem_0,100%_0,100%_100%,0_100%)]">
+                <div className="hidden w-72 items-center justify-center bg-secondary/80 backdrop-blur-xl [clip-path:polygon(3rem_0,100%_0,100%_100%,0_100%)] lg:flex xl:w-80 xl:[clip-path:polygon(4rem_0,100%_0,100%_100%,0_100%)]">
                     <a
-                        href="#contato"
-                        className="cursor-pointer rounded-full bg-white px-6 py-2 text-sm font-medium text-secondary"
+                        href={whatsappHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium whitespace-nowrap text-secondary"
                     >
-                        Contato
+                        <FaWhatsapp className="text-lg" aria-hidden />
+                        81 8736-0578
                     </a>
                 </div>
             </div>
@@ -61,11 +66,14 @@ export default function Nav() {
                     ))}
                     <li>
                         <a
-                            href="#contato"
+                            href={whatsappHref}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={fechar}
-                            className="inline-block rounded-full bg-white px-6 py-2 text-sm font-medium text-secondary"
+                            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-2 text-sm font-medium text-secondary"
                         >
-                            Contato
+                            <FaWhatsapp className="text-lg" aria-hidden />
+                            81 8736-0578
                         </a>
                     </li>
                 </ul>
