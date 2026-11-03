@@ -19,13 +19,13 @@ export default function Cta() {
                     Comercialização pela Edu Imobiliária. Fale com nossa equipe comercial:
                 </p>
                 <a
-                    href="https://wa.me/558187360578"
+                    href="https://wa.me/5581987360578"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-secondary"
                 >
                     <FaWhatsapp className="text-xl" aria-hidden />
-                    81 8736-0578
+                    (81) 98736-0578
                 </a>
             </div>
         </section>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaBars, FaTimes, FaWhatsapp } from "react-icons/fa";
 
-const whatsappHref = "https://wa.me/558187360578";
+const whatsappHref = "https://wa.me/5581987360578";
 
 const links = [
     { nome: "O projeto", href: "#projeto" },
@@ -51,7 +51,7 @@ export default function Nav() {
                         className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium whitespace-nowrap text-secondary"
                     >
                         <FaWhatsapp className="text-lg" aria-hidden />
-                        81 8736-0578
+                        (81) 98736-0578
                     </a>
                 </div>
             </div>
@@ -73,7 +73,7 @@ export default function Nav() {
                             className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-2 text-sm font-medium text-secondary"
                         >
                             <FaWhatsapp className="text-lg" aria-hidden />
-                            81 8736-0578
+                            (81) 98736-0578
                         </a>
                     </li>
                 </ul>
