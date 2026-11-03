@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaTimes, FaWhatsapp } from "react-icons/fa";
+import { useScrolled } from "../hooks/useScrolled";
 
 const whatsappHref = "https://wa.me/5581987360578";
 
@@ -12,13 +13,20 @@ const links = [
 
 export default function Nav() {
     const [aberto, setAberto] = useState(false);
+    const scrolled = useScrolled();
 
     function fechar() {
         setAberto(false);
     }
 
     return (
-        <nav className="fixed top-0 right-0 left-0 z-50 border-b border-white/10 bg-primary/40 shadow-sm backdrop-blur-xl">
+        <nav
+            className={`fixed top-0 right-0 left-0 z-50 border-b shadow-sm backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-300 ${
+                scrolled
+                    ? "border-white/15 bg-primary/90 shadow-primary/20"
+                    : "border-white/10 bg-primary/40"
+            }`}
+        >
             <div className="flex h-16 items-stretch">
                 <div className="flex flex-1 items-center justify-between px-5 sm:px-10">
                     <a href="#topo">

@@ -1,11 +1,12 @@
 import { FaWhatsapp } from "react-icons/fa";
+import Section from "./Section";
 
 const bgCrystal =
     "https://res.cloudinary.com/dkgjwrjpv/image/upload/f_auto,q_auto,fl_progressive,w_1600/v1793133284/bg-crystal_e4qorm.jpg";
 
 export default function Cta() {
     return (
-        <section
+        <Section
             id="contato"
             className="relative bg-cover bg-center"
             style={{ backgroundImage: `url(${bgCrystal})` }}
@@ -28,6 +29,6 @@ export default function Cta() {
                     (81) 98736-0578
                 </a>
             </div>
-        </section>
+        </Section>
     );
 }

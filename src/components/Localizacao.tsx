@@ -1,3 +1,6 @@
+import Section from "./Section";
+import SectionLead from "./SectionLead";
+
 const proximos = [
     {
         titulo: "Sítio da Trindade",
@@ -22,19 +25,21 @@ const mapa =
 
 export default function Localizacao() {
     return (
-        <section id="localizacao" className="bg-white py-16 text-primary sm:py-24">
+        <Section id="localizacao" className="bg-white py-16 text-primary sm:py-24">
             <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-10 md:grid-cols-2 md:gap-16">
                 <div>
-                    <p className="text-sm font-medium tracking-[0.28em] text-secondary">LOCALIZAÇÃO</p>
-                    <h2 className="mt-4 text-3xl leading-tight font-medium md:text-4xl">
-                        Mais perto do que faz parte da <span className="pl-2 font-allison text-5xl text-tertiary sm:text-7xl"> sua vida</span>
-                    </h2>
-                    <p className="mt-6 text-base leading-relaxed text-primary/80">
-                        Viver no Zafira é estar em uma região que combina a dinâmica da Zona Norte com a
-                        proximidade de áreas verdes, serviços, educação, gastronomia, comércio e
-                        conveniências. E estar próximo ao Sítio da Trindade significa ter um dos espaços
-                        verdes mais emblemáticos de Casa Amarela fazendo parte do entorno.
-                    </p>
+                    <SectionLead label="LOCALIZAÇÃO">
+                        <h2 className="text-3xl leading-tight font-medium md:text-4xl">
+                            Mais perto do que faz parte da{" "}
+                            <span className="pl-2 font-allison text-5xl text-tertiary sm:text-7xl"> sua vida</span>
+                        </h2>
+                        <p className="mt-6 text-base leading-relaxed text-primary/80">
+                            Viver no Zafira é estar em uma região que combina a dinâmica da Zona Norte com a
+                            proximidade de áreas verdes, serviços, educação, gastronomia, comércio e
+                            conveniências. E estar próximo ao Sítio da Trindade significa ter um dos espaços
+                            verdes mais emblemáticos de Casa Amarela fazendo parte do entorno.
+                        </p>
+                    </SectionLead>
 
                     <p className="mt-10 text-sm font-medium tracking-[0.2em] text-secondary">PRÓXIMO DE</p>
                     <ul className="mt-5 grid grid-cols-2 gap-5">
@@ -61,6 +66,6 @@ export default function Localizacao() {
                     </p>
                 </div>
             </div>
-        </section>
+        </Section>
     );
 }

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Section from "./Section";
+import SectionLead from "./SectionLead";
 
 const fotos = [
     {
@@ -57,22 +59,23 @@ export default function Lazer() {
     }
 
     return (
-        <section id="lazer" className="bg-[#0b2a5b] py-16 text-white sm:py-24">
+        <Section id="lazer" className="bg-[#0b2a5b] py-16 text-white sm:py-24">
             <div className="mx-auto max-w-7xl px-5 sm:px-10">
-                <p className="text-sm font-medium tracking-[0.28em] text-secondary">LAZER</p>
-                <h2 className="mt-4 max-w-3xl text-3xl leading-tight font-medium md:text-4xl">
-                    Mais do que <span className="font-allison text-5xl text-tertiary sm:text-7xl">áreas comuns</span>
-                </h2>
-                <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80">
-                    Espaços pensados para todos: crianças, jovens, adultos, terceira idade e pets. O Zafira reúne piscinas adulto e infantil com deck, coworking, salão de festas, sala fit dance, espaço fitness, sala de jogos, pet place, espaço teen, brinquedoteca e playground.
-                </p>
+                <SectionLead label="LAZER">
+                    <h2 className="max-w-3xl text-3xl leading-tight font-medium md:text-4xl">
+                        Mais do que <span className="font-allison text-5xl text-tertiary sm:text-7xl">áreas comuns</span>
+                    </h2>
+                    <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80">
+                        Espaços pensados para todos: crianças, jovens, adultos, terceira idade e pets. O Zafira reúne piscinas adulto e infantil com deck, coworking, salão de festas, sala fit dance, espaço fitness, sala de jogos, pet place, espaço teen, brinquedoteca e playground.
+                    </p>
+                </SectionLead>
 
                 <div className="mx-auto mt-14 grid max-w-6xl gap-3 md:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
                     <figure className="relative min-h-80 overflow-hidden bg-[#16345c]">
                         <img
                             src={selecionado.src}
                             alt={selecionado.titulo}
-                            className="h-full min-h-80 w-full object-cover"
+                            className="h-full min-h-80 w-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
                         />
                         <figcaption className="absolute bottom-4 left-0 max-w-[70%] bg-primary px-4 py-3 text-[0.65rem] leading-snug font-medium tracking-wide uppercase sm:max-w-[92%] sm:px-5 sm:text-xs sm:tracking-[0.14em]">
                             {selecionado.titulo}
@@ -113,6 +116,6 @@ export default function Lazer() {
                     </ul>
                 </div>
             </div>
-        </section>
+        </Section>
     );
 }

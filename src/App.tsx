@@ -6,11 +6,13 @@ import Lazer from "./components/Lazer";
 import Plantas from "./components/Plantas";
 import Cta from "./components/Cta";
 import Footer from "./components/Footer";
+import ScrollProgressBar from "./components/ScrollProgressBar";
 
 function App() {
   return (
     <>
       <Nav />
+      <ScrollProgressBar />
       <main>
         <Hero />
         <Projeto />

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Section from "./Section";
+import SectionLead from "./SectionLead";
 
 const plantaGeral =
     "https://res.cloudinary.com/dkgjwrjpv/image/upload/v1793139673/Planta_geral_apartamentos_imagem_ilustrativa_mlj1i2.webp";
@@ -64,13 +66,14 @@ export default function Plantas() {
     }, [ampliada]);
 
     return (
-        <section id="plantas" className="bg-white py-16 text-primary sm:py-24">
+        <Section id="plantas" className="bg-white py-16 text-primary sm:py-24">
             <div className="mx-auto max-w-7xl px-5 sm:px-10">
-                <p className="text-sm font-medium tracking-[0.28em] text-secondary">PLANTAS</p>
-                <h2 className="mt-4 text-3xl leading-tight font-medium md:text-4xl">2 quartos · 1 suíte</h2>
-                <p className="mt-4 max-w-xl text-base leading-relaxed text-primary/80">
-                    O seu espaço para viver novos momentos
-                </p>
+                <SectionLead label="PLANTAS">
+                    <h2 className="text-3xl leading-tight font-medium md:text-4xl">2 quartos · 1 suíte</h2>
+                    <p className="mt-4 max-w-xl text-base leading-relaxed text-primary/80">
+                        O seu espaço para viver novos momentos
+                    </p>
+                </SectionLead>
 
                 <figure className="mt-14">
                     <button
@@ -131,6 +134,6 @@ export default function Plantas() {
                     />
                 </div>
             )}
-        </section>
+        </Section>
     );
 }
