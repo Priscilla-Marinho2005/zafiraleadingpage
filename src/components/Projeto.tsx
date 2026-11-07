@@ -44,7 +44,7 @@ export default function Projeto() {
             <Reveal variant="scale" className="mx-auto w-full max-w-5xl px-5 sm:max-w-6xl sm:px-10">
                 <div
                     ref={playerRef}
-                    className="group relative aspect-video w-full overflow-hidden rounded-2xl bg-[#0a2444] shadow-xl shadow-black/25"
+                    className="group relative aspect-video w-full overflow-hidden rounded-lg bg-[#0a2444] shadow-xl shadow-black/25"
                 >
                     {playing ? (
                         <iframe
