@@ -7,6 +7,7 @@ import Plantas from "./components/Plantas";
 import Cta from "./components/Cta";
 import Footer from "./components/Footer";
 import ScrollProgressBar from "./components/ScrollProgressBar";
+import CookieConsent from "./components/CookieConsent";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Cta />
       </main>
       <Footer />
+      <CookieConsent />
     </>
   )
 }
