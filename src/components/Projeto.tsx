@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import Section from "./Section";
 import SectionLead from "./SectionLead";
@@ -24,6 +24,10 @@ export default function Projeto() {
     const playerRef = useRef<HTMLDivElement>(null);
     const inView = useInView(playerRef, { once: true, threshold: 0.2, rootMargin: "0px 0px -4% 0px" });
     const [playing, setPlaying] = useState(false);
+
+    useEffect(() => {
+        if (inView) setPlaying(true);
+    }, [inView]);
 
     return (
         <Section id="projeto" className="bg-primary text-white">
