@@ -6,59 +6,99 @@
 
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <meta name="apple-mobile-web-app-title" content="Zafira" />
     <link rel="manifest" href="/site.webmanifest" />
+
     <title>Zafira em Casa Amarela | Apartamentos de 2 quartos | Edu Imobiliária</title>
     <meta
       name="description"
       content="Zafira, novo empreendimento da Romarco em Casa Amarela, Recife. 90 apartamentos de 2 quartos com suíte e varanda gourmet, na Rua Conselheiro Nabuco, 241. Comercialização Edu Imobiliária. WhatsApp (81) 8736-0578."
     />
+    <meta
+      name="keywords"
+      content="Zafira, apartamento Casa Amarela, apartamento Recife, imóvel Zona Norte Recife, 2 quartos suíte, Romarco, Edu Imobiliária, Conselheiro Nabuco"
+    />
     <meta name="author" content="Edu Imobiliária" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="googlebot" content="index, follow" />
-    <meta name="theme-color" content="#0b2a5b" />
+    <meta name="theme-color" content="#091C3E" />
+    <meta name="format-detection" content="telephone=yes" />
+
+    <link rel="canonical" href="%SITE_ORIGIN%/" />
+
+    <meta name="geo.region" content="BR-PE" />
+    <meta name="geo.placename" content="Recife, Casa Amarela" />
+    <meta name="geo.position" content="-8.0299646;-34.9160703" />
+    <meta name="ICBM" content="-8.0299646, -34.9160703" />
+
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
-    <meta property="og:site_name" content="Edu Imobiliária" />
+    <meta property="og:site_name" content="Zafira | Edu Imobiliária" />
+    <meta property="og:url" content="%SITE_ORIGIN%/" />
     <meta property="og:title" content="Zafira em Casa Amarela | Apartamentos de 2 quartos | Edu Imobiliária" />
     <meta
       property="og:description"
       content="Novo edifício da Romarco na Rua Conselheiro Nabuco, 241, Casa Amarela, Recife. 2 quartos com suíte, de 51 a 56 m². Fale com a Edu Imobiliária: (81) 8736-0578."
     />
-    <meta property="og:image" content="/zafira-logo.png" />
+    <meta property="og:image" content="%SITE_ORIGIN%/zafira-logo.png" />
+    <meta property="og:image:secure_url" content="%SITE_ORIGIN%/zafira-logo.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1030" />
     <meta property="og:image:height" content="482" />
-    <meta property="og:image:alt" content="Logo do edifício Zafira" />
+    <meta property="og:image:alt" content="Logo do edifício Zafira em Casa Amarela, Recife" />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Zafira em Casa Amarela | Edu Imobiliária" />
     <meta
       name="twitter:description"
       content="90 apartamentos de 2 quartos com suíte na Rua Conselheiro Nabuco, 241, Casa Amarela. Comercialização Edu Imobiliária."
     />
-    <meta name="twitter:image" content="/zafira-logo.png" />
+    <meta name="twitter:image" content="%SITE_ORIGIN%/zafira-logo.png" />
     <meta name="twitter:image:alt" content="Logo do edifício Zafira" />
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
+            "@type": "WebSite",
+            "@id": "%SITE_ORIGIN%/#website",
+            "url": "%SITE_ORIGIN%/",
+            "name": "Zafira | Edu Imobiliária",
+            "description": "Landing page do empreendimento Zafira em Casa Amarela, Recife. Comercialização Edu Imobiliária.",
+            "inLanguage": "pt-BR",
+            "publisher": { "@id": "%SITE_ORIGIN%/#edu-imobiliaria" }
+          },
+          {
             "@type": "RealEstateAgent",
-            "@id": "#edu-imobiliaria",
+            "@id": "%SITE_ORIGIN%/#edu-imobiliaria",
             "name": "Edu Imobiliária",
             "telephone": "+558187360578",
+            "url": "%SITE_ORIGIN%/",
+            "image": "%SITE_ORIGIN%/zafira-logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Recife",
+              "addressRegion": "PE",
+              "addressCountry": "BR"
+            },
             "areaServed": {
-              "@type": "City",
+              "@type": "AdministrativeArea",
               "name": "Recife",
               "addressCountry": "BR"
             }
           },
           {
             "@type": "ApartmentComplex",
+            "@id": "%SITE_ORIGIN%/#zafira",
+            "url": "%SITE_ORIGIN%/#projeto",
             "name": "Zafira",
             "description": "Empreendimento residencial da Romarco em Casa Amarela, Recife, com 90 apartamentos de 2 quartos, sendo 1 suíte, e varanda gourmet. Áreas privativas de 51,42 m² a 55,75 m². Comercializado pela Edu Imobiliária.",
-            "image": "https://res.cloudinary.com/dkgjwrjpv/image/upload/f_auto,q_auto,w_1200/v1793133286/torre_mscx5r.webp",
+            "image": [
+              "%SITE_ORIGIN%/zafira-logo.png",
+              "https://res.cloudinary.com/dkgjwrjpv/image/upload/f_auto,q_auto,w_1200/v1793133286/torre_mscx5r.webp"
+            ],
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Rua Conselheiro Nabuco, 241",
@@ -73,6 +113,7 @@
               "latitude": -8.0299646,
               "longitude": -34.9160703
             },
+            "hasMap": "https://www.google.com/maps/place/Rua+Conselheiro+Nabuco,+241+-+Casa+Amarela,+Recife+-+PE,+52070-010/@-8.0299646,-34.9160703,17z",
             "numberOfAccommodationUnits": 90,
             "numberOfBedrooms": 2,
             "petsAllowed": true,
@@ -81,7 +122,8 @@
               "@type": "Organization",
               "name": "Romarco"
             },
-            "seller": { "@id": "#edu-imobiliaria" },
+            "seller": { "@id": "%SITE_ORIGIN%/#edu-imobiliaria" },
+            "mainEntityOfPage": { "@id": "%SITE_ORIGIN%/#website" },
             "amenityFeature": [
               { "@type": "LocationFeatureSpecification", "name": "Piscinas adulto e infantil com deck", "value": true },
               { "@type": "LocationFeatureSpecification", "name": "Coworking", "value": true },
@@ -94,6 +136,23 @@
               { "@type": "LocationFeatureSpecification", "name": "Brinquedoteca", "value": true },
               { "@type": "LocationFeatureSpecification", "name": "Playground", "value": true },
               { "@type": "LocationFeatureSpecification", "name": "90 vagas de estacionamento", "value": true }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Início",
+                "item": "%SITE_ORIGIN%/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "O Projeto",
+                "item": "%SITE_ORIGIN%/#projeto"
+              }
             ]
           }
         ]

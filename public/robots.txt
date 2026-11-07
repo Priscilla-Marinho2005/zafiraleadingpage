@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+# Em produção, o build gera robots.txt com Sitemap absoluto se VITE_SITE_URL estiver definido.
