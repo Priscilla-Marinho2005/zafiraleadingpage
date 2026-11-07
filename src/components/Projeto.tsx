@@ -41,10 +41,10 @@ export default function Projeto() {
                 aria-hidden
             />
 
-            <Reveal variant="scale">
+            <Reveal variant="scale" className="mx-auto w-full max-w-5xl px-5 sm:max-w-6xl sm:px-10">
                 <div
                     ref={playerRef}
-                    className="group relative w-full overflow-hidden bg-[#0a2444] aspect-video lg:aspect-21/9"
+                    className="group relative aspect-video w-full overflow-hidden rounded-2xl bg-[#0a2444] shadow-xl shadow-black/25"
                 >
                     {playing ? (
                         <iframe
@@ -60,7 +60,7 @@ export default function Projeto() {
                             <img
                                 src={THUMB}
                                 alt=""
-                                className="absolute inset-0 h-full w-full scale-105 object-cover opacity-70 transition duration-700 group-hover:scale-100"
+                                className="absolute inset-0 h-full w-full object-cover opacity-60"
                                 loading="lazy"
                                 decoding="async"
                             />
@@ -72,8 +72,8 @@ export default function Projeto() {
                                 className="absolute inset-0 flex cursor-pointer flex-col items-center justify-center gap-4 text-white/90 transition disabled:cursor-default"
                                 aria-label="Reproduzir vídeo do projeto"
                             >
-                                <span className="flex h-18 w-18 items-center justify-center rounded-full border border-white/25 bg-white/10 shadow-lg shadow-black/30 backdrop-blur-md transition group-hover:border-secondary/50 group-hover:bg-secondary/20">
-                                    <FaPlay className="ml-1 text-xl text-white" aria-hidden />
+                                <span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/25 bg-white/10 shadow-lg shadow-black/30 backdrop-blur-md transition group-hover:border-secondary/50 group-hover:bg-secondary/20 sm:h-16 sm:w-16">
+                                    <FaPlay className="ml-0.5 text-base text-white sm:text-lg" aria-hidden />
                                 </span>
                                 <p className="text-xs font-medium tracking-[0.35em] text-white/70 uppercase">
                                     {inView ? "Assistir com som" : "Vídeo do projeto"}
@@ -89,7 +89,7 @@ export default function Projeto() {
                 </div>
             </Reveal>
 
-            <div className="h-16 sm:h-24" aria-hidden />
+            <div className="h-10 sm:h-16" aria-hidden />
         </Section>
     );
 }
