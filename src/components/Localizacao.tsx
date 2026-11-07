@@ -1,3 +1,4 @@
+import Reveal from "./Reveal";
 import Section from "./Section";
 import SectionLead from "./SectionLead";
 
@@ -41,18 +42,22 @@ export default function Localizacao() {
                         </p>
                     </SectionLead>
 
-                    <p className="mt-10 text-sm font-medium tracking-[0.2em] text-secondary">PRÓXIMO DE</p>
+                    <Reveal delay={120}>
+                        <p className="mt-10 text-sm font-medium tracking-[0.2em] text-secondary">PRÓXIMO DE</p>
+                    </Reveal>
                     <ul className="mt-5 grid grid-cols-2 gap-5">
-                        {proximos.map((item) => (
+                        {proximos.map((item, index) => (
                             <li key={item.titulo}>
-                                <p className="font-medium">{item.titulo}</p>
-                                <p className="text-sm leading-relaxed text-primary/70">{item.texto}</p>
+                                <Reveal delay={160 + index * 80}>
+                                    <p className="font-medium">{item.titulo}</p>
+                                    <p className="text-sm leading-relaxed text-primary/70">{item.texto}</p>
+                                </Reveal>
                             </li>
                         ))}
                     </ul>
                 </div>
 
-                <div>
+                <Reveal variant="right">
                     <iframe
                         title="Mapa do Zafira na Rua Conselheiro Nabuco"
                         src={mapa}
@@ -64,7 +69,7 @@ export default function Localizacao() {
                     <p className="mt-4 text-sm text-primary/80">
                         Rua Conselheiro Nabuco, nº 241, Casa Amarela, Recife/PE, CEP 52070-010. Zona Norte, próximo ao Sítio da Trindade.
                     </p>
-                </div>
+                </Reveal>
             </div>
         </Section>
     );

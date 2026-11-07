@@ -1,99 +1,95 @@
+import { useRef, useState } from "react";
+import { FaPlay } from "react-icons/fa";
 import Section from "./Section";
 import SectionLead from "./SectionLead";
+import Reveal from "./Reveal";
+import { useInView } from "../hooks/useInView";
 
-const pool =
-    "https://res.cloudinary.com/dkgjwrjpv/image/upload/v1793136279/pool-aerial_lxjhbn.jpg";
+const VIDEO_ID = "R5352J_C3vo";
+const THUMB = `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`;
 
-const destaques = [
-    { valor: "90", titulo: "apartamentos" },
-    { valor: "2", titulo: "quartos", detalhe: "sendo 1 suíte" },
-    { valor: "90", titulo: "vagas", detalhe: "de estacionamento" },
-    { valor: "3", titulo: "pavimentos", detalhe: "de áreas comuns e lazer" },
-];
-
-const plantas = [
-    { nome: "Terminação 01 e 06", area: "53,84 m²" },
-    { nome: "Terminação 02 e 05", area: "55,75 m²" },
-    { nome: "Terminação 03", area: "51,42 m²" },
-    { nome: "Terminação 04", area: "55,48 m²" },
-];
+const embedSrc = (autoplay: boolean) => {
+    const params = new URLSearchParams({
+        rel: "0",
+        modestbranding: "1",
+        playsinline: "1",
+    });
+    if (autoplay) {
+        params.set("autoplay", "1");
+    }
+    return `https://www.youtube.com/embed/${VIDEO_ID}?${params.toString()}`;
+};
 
 export default function Projeto() {
+    const playerRef = useRef<HTMLDivElement>(null);
+    const inView = useInView(playerRef, { once: true, threshold: 0.2, rootMargin: "0px 0px -4% 0px" });
+    const [playing, setPlaying] = useState(false);
+
     return (
-        <Section id="projeto" className="relative overflow-hidden bg-primary text-white">
-            <div className="relative overflow-hidden bg-[#16345c] py-16 sm:py-24">
-                <div className="pointer-events-none absolute -top-24 -left-16 h-80 w-80 rounded-full bg-secondary/25 blur-3xl" />
-                <div className="pointer-events-none absolute right-0 bottom-0 h-96 w-96 rounded-full bg-tertiary/15 blur-3xl" />
-                <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-10 md:grid-cols-2 md:gap-16">
-                    <SectionLead label="O PROJETO">
-                        <h2 className="text-2xl leading-tight md:text-4xl">
-                            Há <span className="font-allison text-5xl text-secondary sm:text-7xl">momentos</span>
-                            <br />
-                            em que a vida pede
-                            uma nova escolha
-                        </h2>
-                        <div className="mt-5 space-y-3 text-base leading-relaxed text-white/80">
-                            <p>
-                                Um lugar que acompanhe novas conquistas, novos encontros, novos planos.
-                            </p>
-                            <p>
-                                Um endereço para viver o presente com mais praticidade e olhar para o futuro
-                                com tranquilidade.
-                            </p>
-                            <p>
-                                Um novo empreendimento da Romarco, em <span className="font-semibold">Casa Amarela</span>, pensado para quem entende
-                                que morar bem é encontrar o equilíbrio entre localização, conforto, lazer e
-                                tudo aquilo que realmente importa.
-                            </p>
-                        </div>
-                        <p className="mt-8 font-allison text-5xl leading-none text-secondary sm:text-6xl">
-                            Um novo valor
-                            <span className="-mt-4 ml-8 block font-outfit text-2xl leading-normal text-white sm:-mt-5 sm:ml-17 sm:text-[1.7rem]">
-                                para cada momento
-                            </span>
-                        </p>
-                    </SectionLead>
-                    <div className="flex justify-center">
-                        <img
-                            src={pool}
-                            alt="Área de piscina do Zafira, em Casa Amarela"
-                            className="h-auto max-h-135 w-full max-w-105 object-cover shadow-xl [clip-path:polygon(50%_0%,100%_18%,100%_82%,50%_100%,0%_82%,0%_18%)]"
-                        />
-                    </div>
-                </div>
-            </div>
-
-            <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-10 sm:py-24">
-                <SectionLead>
-                    <h3 className="text-3xl font-medium md:text-4xl">
-                        Um projeto pensado para a{" "}
-                        <span className="font-allison text-5xl text-tertiary sm:text-7xl">vida real</span>
-                    </h3>
-                    <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/80">
-                        O Zafira reúne a praticidade que a rotina pede e os espaços que os momentos especiais merecem.
-                    </p>
+        <Section id="projeto" className="bg-primary text-white">
+            <div className="mx-auto max-w-7xl px-5 pt-16 pb-10 sm:px-10 sm:pt-24 sm:pb-12">
+                <SectionLead label="O PROJETO">
+                    <h2 className="text-3xl leading-tight font-medium md:text-4xl">
+                        Conheça o{" "}
+                        <span className="font-allison text-5xl text-tertiary sm:text-6xl"> empreendimento</span>
+                    </h2>
                 </SectionLead>
-
-                <ul className="mt-12 grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4">
-                    {destaques.map((item) => (
-                        <li key={item.titulo}>
-                            <p className="text-5xl font-medium text-secondary">{item.valor}</p>
-                            <p className="mt-1 text-lg">{item.titulo}</p>
-                            {item.detalhe && <p className="text-sm text-white/70">{item.detalhe}</p>}
-                        </li>
-                    ))}
-                </ul>
-
-                <ul className="mt-7 grid gap-6 grid-cols-2 lg:grid-cols-4">
-                    {plantas.map((planta) => (
-                        <li key={planta.nome} className="border-t border-white/20 pt-4">
-                            <p className="text-sm tracking-wide text-white/70">{planta.nome}</p>
-                            <p className="mt-2 text-2xl font-medium">{planta.area}</p>
-                            <p className="text-sm text-white/70">área privativa</p>
-                        </li>
-                    ))}
-                </ul>
             </div>
+
+            <div
+                className="pointer-events-none h-px w-full bg-linear-to-r from-transparent via-secondary/60 to-transparent"
+                aria-hidden
+            />
+
+            <Reveal variant="scale">
+                <div
+                    ref={playerRef}
+                    className="group relative w-full overflow-hidden bg-[#0a2444] aspect-video lg:aspect-21/9"
+                >
+                    {playing ? (
+                        <iframe
+                            className="absolute inset-0 h-full w-full border-0"
+                            src={embedSrc(true)}
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                        />
+                    ) : (
+                        <>
+                            <img
+                                src={THUMB}
+                                alt=""
+                                className="absolute inset-0 h-full w-full scale-105 object-cover opacity-70 transition duration-700 group-hover:scale-100"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/30 to-primary/50" />
+                            <button
+                                type="button"
+                                disabled={!inView}
+                                onClick={() => setPlaying(true)}
+                                className="absolute inset-0 flex cursor-pointer flex-col items-center justify-center gap-4 text-white/90 transition disabled:cursor-default"
+                                aria-label="Reproduzir vídeo do projeto"
+                            >
+                                <span className="flex h-18 w-18 items-center justify-center rounded-full border border-white/25 bg-white/10 shadow-lg shadow-black/30 backdrop-blur-md transition group-hover:border-secondary/50 group-hover:bg-secondary/20">
+                                    <FaPlay className="ml-1 text-xl text-white" aria-hidden />
+                                </span>
+                                <p className="text-xs font-medium tracking-[0.35em] text-white/70 uppercase">
+                                    {inView ? "Assistir com som" : "Vídeo do projeto"}
+                                </p>
+                            </button>
+                        </>
+                    )}
+                    <div
+                        className="pointer-events-none absolute inset-0 bg-linear-to-t from-primary/40 via-transparent to-black/20"
+                        aria-hidden
+                    />
+                    <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+                </div>
+            </Reveal>
+
+            <div className="h-16 sm:h-24" aria-hidden />
         </Section>
     );
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Reveal from "./Reveal";
 import Section from "./Section";
 import SectionLead from "./SectionLead";
 
@@ -71,6 +72,7 @@ export default function Lazer() {
                 </SectionLead>
 
                 <div className="mx-auto mt-14 grid max-w-6xl gap-3 md:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
+                    <Reveal variant="scale" className="min-h-80">
                     <figure className="relative min-h-80 overflow-hidden bg-[#16345c]">
                         <img
                             src={selecionado.src}
@@ -97,10 +99,12 @@ export default function Lazer() {
                             <FaChevronRight />
                         </button>
                     </figure>
+                    </Reveal>
 
                     <ul className="hidden grid-cols-2 gap-3 md:grid">
                         {fotos.map((foto, index) => (
                             <li key={foto.src}>
+                                <Reveal delay={index * 45} variant="up">
                                 <button
                                     type="button"
                                     onClick={() => setAtivo(index)}
@@ -111,6 +115,7 @@ export default function Lazer() {
                                 >
                                     <img src={foto.src} alt="" className="h-full w-full object-cover" />
                                 </button>
+                                </Reveal>
                             </li>
                         ))}
                     </ul>

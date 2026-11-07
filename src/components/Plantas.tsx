@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Reveal from "./Reveal";
 import Section from "./Section";
 import SectionLead from "./SectionLead";
 
@@ -75,7 +76,8 @@ export default function Plantas() {
                     </p>
                 </SectionLead>
 
-                <figure className="mt-14">
+                <Reveal className="mt-14">
+                <figure>
                     <button
                         type="button"
                         onClick={() => ampliarImagem(plantaGeral, "Planta geral dos apartamentos")}
@@ -92,10 +94,12 @@ export default function Plantas() {
                         Planta geral apartamentos — imagem ilustrativa
                     </figcaption>
                 </figure>
+                </Reveal>
 
                 <ul className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                    {terminacoes.map((planta) => (
+                    {terminacoes.map((planta, index) => (
                         <li key={planta.nome}>
+                            <Reveal delay={index * 70} variant="up">
                             <button
                                 type="button"
                                 onClick={() => ampliarImagem(planta.src, planta.nome)}
@@ -105,6 +109,7 @@ export default function Plantas() {
                                 <img src={planta.src} alt={planta.nome} className="w-full object-contain" />
                             </button>
                             <p className="mt-3 text-center text-sm font-medium tracking-wide">{planta.nome}</p>
+                            </Reveal>
                         </li>
                     ))}
                 </ul>

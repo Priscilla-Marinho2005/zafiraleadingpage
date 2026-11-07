@@ -22,14 +22,39 @@ body {
 
 @media (prefers-reduced-motion: no-preference) {
     .section-enter {
-        opacity: 0;
-        transform: translate3d(0, 14px, 0);
-        transition:
-            opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-            transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+        transform: translate3d(0, 12px, 0);
+        transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .section-enter--visible {
+        transform: none;
+    }
+
+    .reveal {
+        opacity: 0;
+        transition:
+            opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: var(--reveal-delay, 0ms);
+    }
+
+    .reveal--up {
+        transform: translate3d(0, 22px, 0);
+    }
+
+    .reveal--left {
+        transform: translate3d(-28px, 0, 0);
+    }
+
+    .reveal--right {
+        transform: translate3d(28px, 0, 0);
+    }
+
+    .reveal--scale {
+        transform: scale(0.97);
+    }
+
+    .reveal--visible {
         opacity: 1;
         transform: none;
     }
@@ -66,6 +91,15 @@ body {
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
+    }
+
+    .section-enter {
+        transform: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
     }
 
     .section-lead__rule {
