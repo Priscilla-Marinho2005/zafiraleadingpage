@@ -16,14 +16,19 @@ export default function Cta() {
             <div className="absolute inset-0 bg-linear-to-l from-primary/55 via-primary/20 to-transparent" />
             <div className="relative mx-auto flex min-h-[70vh] max-w-3xl flex-col items-center justify-center px-5 py-16 text-center text-white sm:px-10 sm:py-24">
                 <Reveal delay={0}>
-                    <img src="/LOGO-EDU-IMOB-SEM-FUNDO.png" alt="Edu Imobiliária" className="h-40 w-auto" />
+                    <div className="flex flex-col items-center">
+                        <img src="/LOGO-EDU-IMOB-SEM-FUNDO.png" alt="Edu Imobiliária" className="h-40 w-auto" />
+                        <p className="relative z-10 -mt-12 text-xs font-medium tracking-[0.22em] text-white/90">
+                            CRECI 23201-J
+                        </p>
+                    </div>
                 </Reveal>
                 <Reveal delay={100}>
                     <h2 className="text-3xl font-medium md:text-4xl">Venha conhecer o Zafira.</h2>
                 </Reveal>
                 <Reveal delay={180}>
                     <p className="mt-2 max-w-md text-base text-gray">
-                        Comercialização pela Edu Imobiliária. Fale com nossa equipe comercial:
+                        Comercialização pela Imobiliária Edu Imob. Fale com nossa equipe comercial:
                     </p>
                 </Reveal>
                 <Reveal delay={260}>

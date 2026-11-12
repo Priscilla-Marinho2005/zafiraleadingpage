@@ -9,6 +9,7 @@ const links = [
     { nome: "Localização", href: "#localizacao" },
     { nome: "Lazer", href: "#lazer" },
     { nome: "Plantas", href: "#plantas" },
+    { nome: "Pagamento", href: "#pagamento" },
 ];
 
 export default function Nav() {
